@@ -1,0 +1,19 @@
+body{
+  //margin: 50px auto;
+  text-align: center;
+}
+.container{
+  display: block;
+  border: 1px solid black;
+  max-width: 600px;
+  
+}
+
+
+h3.p-choice{
+  float: left;
+}
+h3.c-choice{
+  float: right;
+  
+}
