@@ -7,91 +7,69 @@ function computerPlay(){
     }
 
 
-  const buttons = document.querySelectorAll('button');
-  buttons.forEach((button) => {
-    button.addEventListener('click', (e) =>{
-      let playerSelection = button.id;
-      console.log(playerSelection);
-      playRound(playerSelection,computerPlay());
-      });
-    
-  });
+  
 
 function playRound(playerSelection, computerSelection){
-       let result;      
        
        if (playerSelection === "rock"){
            
             if (computerSelection === "rock"){
-                result = 
-                return "draw";
+                return 0;
             }
             else if (computerSelection === "paper"){
-                return "lose";
+                return -1;
             }
             else {
-                return "win";
+                return 1;
             }
        }
-       
-       
+              
        if (playerSelection === "scissors"){
            if (computerSelection === "rock"){
-                return "lose";
+                return -1;
             }
             else if (computerSelection === "paper"){
-                return "win";
+                return 1;
             }
             else{
-                return "draw";
+                return 0;
             }
         }
        
         if (playerSelection === "paper"){
             if (computerSelection === "rock"){
-                return "win";
+                return 1;
             }
             else if (computerSelection === "paper"){
-                return "draw";
+                return 0;
             }
             else{
-                return "lose";
+                return -1;
             }
         }
+	
    } 
     
-function game(){
-            
-                
-        let playerWins = 0;
-        let compWins = 0;
-        
-            let round = playRound(playerSelection,computerSelection);
-            
-            if (round === "win"){
-                playerWins++;
-                console.log(" ");
-                console.log("You win, "+ playerSelection + " beats " + computerSelection + ".");
-            } else if (round === "lose"){
-                compWins++;
-                console.log(" ");
-                console.log("You lose, "+ computerSelection + " beats " + playerSelection + ".");
-            } else{
-                console.log(" ");
-                console.log("It's a draw.")
-            }
-            
-                
-        if (playerWins > compWins){
-            console.log(" ");
-            console.log("The result is: " + playerWins + " : " + compWins +". You're the winner!")
-        } else if (playerWins < compWins){
-            console.log(" ");
-            console.log("The result is: " + playerWins + " : " + compWins +". You lost!");
-        }
-        else{
-            console.log(" ");
-            console.log("The result is: " + playerWins + " : " + compWins +". It'a a tie!");
-        }
-         
-    }
+function newGame(){
+     playerScore = 0;
+     compScore = 0;
+	 i = 0;
+	
+	const buttons = document.querySelectorAll('button');
+  	
+	buttons.forEach((button) => {
+		button.addEventListener('click', (e) =>{
+      	let playerSelection = button.id;
+			console.log(playerSelection);
+			playRound(playerSelection,computerPlay());
+      	});
+    
+  });
+	
+}
+     
+let playerScore;
+let compScore;
+let i;
+
+newGame();
