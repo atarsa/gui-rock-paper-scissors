@@ -1,5 +1,15 @@
-var buttons = document.querySelectorAll('button');
-    
+const buttons = document.querySelectorAll('button');
+
+const display = document.querySelector('#display');
+const displayChoice = document.createElement('h3');
+
+const resultDisplay = document.querySelector('#result');
+const roundResult = document.createElement('h3'); 
+
+const scoreDisplay = document.querySelector('#score');
+const score = document.createElement('h3');
+
+
 function computerPlay(){
         let selection = ["rock", "paper", "scissors"];
         let computerSelection = selection[Math.floor(Math.random()*selection.length)];
@@ -50,61 +60,7 @@ function computerPlay(){
         }
 	 
    } 
-/*
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', function(e){
-	
-	playerSelection = rock.id;
-	computerSelection = computerPlay();
-	
-	const display = document.querySelector('#display')
-	const displayChoice = document.createElement('div');
-	
-	const text = playerSelection + " vs " + computerSelection;
-	displayChoice.textContent = text;
-	
-	display.appendChild(displayChoice);
-	let result = playRound(playerSelection, computerSelection);
-	console.log(result);
-	return result;
-});
 
-const paper = document.querySelector('#paper');
-paper.addEventListener('click', function(e){
-	
-	playerSelection = paper.id;
-	computerSelection = computerPlay();
-	
-	const display = document.querySelector('#display')
-	const displayChoice = document.createElement('div');
-	
-	const text = playerSelection + " vs " + computerSelection;
-	displayChoice.textContent = text;
-	
-	display.appendChild(displayChoice);
-	let result = playRound(playerSelection, computerSelection);
-	console.log(result);
-	return result;
-});
-
-const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', function(e){
-	
-	playerSelection = scissors.id;
-	computerSelection = computerPlay();
-	
-	const display = document.querySelector('#display')
-	const displayChoice = document.createElement('div');
-	
-	const text = playerSelection + " vs " + computerSelection;
-	displayChoice.textContent = text;
-	
-	display.appendChild(displayChoice);
-	let result = playRound(playerSelection, computerSelection);
-	console.log(result);
-	return result;
-});
-*/
 
 
             
@@ -119,27 +75,45 @@ buttons.forEach((button) => {
 	button.addEventListener("click", function(){
 		var computerSelection = computerPlay();
 		var playerSelection = button.id;
+		
+		const text = playerSelection + " vs " + computerSelection;
+	    
+		displayChoice.textContent = text;
+	    display.appendChild(displayChoice);
+		
 		result = playRound(playerSelection,computerSelection);
 		
 		if (result === "win"){
-                playerWins++;
-                console.log(" ");
-                console.log("You win, "+ playerSelection + " beats " + computerSelection + ".");
-            } else if (result === "lose"){
-                compWins++;
-                console.log(" ");
-                console.log("You lose, "+ computerSelection + " beats " + playerSelection + ".");
-            } else{
-                console.log(" ");
-                console.log("It's a draw.")
+        	playerWins++;
+			roundResult.innerHTML = 'You win this round!';
+			resultDisplay.appendChild(roundResult);
+			score.innerHTML = playerWins + " : " + compWins;
+			scoreDisplay.appendChild(score);
+               
+        } else if (result === "lose"){
+        	compWins++;
+            roundResult.innerHTML = 'You lost this round!';
+			resultDisplay.appendChild(roundResult);
+			score.innerHTML = playerWins + " : " + compWins;
+			scoreDisplay.appendChild(score);
+        } else{
+            roundResult.innerHTML = 'It\'s a draw!';
+			resultDisplay.appendChild(roundResult);
+			score.innerHTML = playerWins + " : " + compWins;
+			scoreDisplay.appendChild(score);
             }
             
-        if (playerWins >= 5){        
+        if (playerWins == 5){        
         
-            console.log("The result is: " + playerWins + " : " + compWins +". You're the winner!")
-		} else if (compWins >= 5){
-            console.log(" ");
-            console.log("The result is: " + playerWins + " : " + compWins +". You lost!");
+            roundResult.innerHTML = 'You\'re the winner!';
+			resultDisplay.appendChild(roundResult);
+			playerWins = 0;
+			compWins = 0;
+		} else if (compWins == 5){
+            roundResult.innerHTML = 'You lost the match!';
+			resultDisplay.appendChild(roundResult);
+			playerWins = 0;
+			compWins = 0;
         }
        
 		
