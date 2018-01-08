@@ -1,19 +1,40 @@
+html{
+	background: transparent;
+}
+html, body{ 
+	
+	height: 100%;
+	width: 100%;
+}
+
 body{
-  //margin: 50px auto;
-  text-align: center;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;
+	text-align: center;
+	margin: 0;
+  
 }
 .container{
-  display: block;
-  border: 1px solid black;
-  max-width: 600px;
-  
+	position: relative;
+	margin-top: 20%;
+}
+hr{
+	border-color: darkgoldenrod;
+}
+.btn{
+	margin: 20px 10px;
 }
 
-
-h3.p-choice{
-  float: left;
+#score h3{
+	font-size: 2.5em;
 }
-h3.c-choice{
-  float: right;
-  
+#score{
+	border: 2px solid darkgoldenrod;
+	margin: 20px;
+	width: 50%;
+	position: absolute;
+	left: 25%;;
+	top: 120%; 
+}
+#result{
+	margin: 30px;
 }

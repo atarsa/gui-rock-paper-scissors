@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div class="container">
     <h1>Rock, Paper, Scissors?</h1>
-    
+	  <h4><i>5 points to win!</i></h4>  
+    <hr>
     <div class="player">
       <h2>Choose your throw:</h2>
-      <button id="rock">Rock</button>
-      <button id="paper">Paper</button>
-      <button id="scissors">Scissors</button>
+      <button id="Rock" class="btn btn-lg btn-default">Rock</button>
+      <button id="Paper" class="btn btn-lg btn-default">Paper</button>
+      <button id="Scissors" class="btn btn-lg btn-default">Scissors</button>
     </div>
     <div id="display">
       
@@ -23,7 +26,7 @@
     <div id="result">
     </div>
     <div id="score">
-      <h1>Score:</h1>
+      <h1>Score Board</h1>
     </div>
   </div> 
 </body>

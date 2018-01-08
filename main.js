@@ -4,29 +4,27 @@ const display = document.querySelector('#display');
 const displayChoice = document.createElement('h3');
 
 const resultDisplay = document.querySelector('#result');
-const roundResult = document.createElement('h3'); 
+const roundResult = document.createElement('h2'); 
 
 const scoreDisplay = document.querySelector('#score');
 const score = document.createElement('h3');
 
 
 function computerPlay(){
-        let selection = ["rock", "paper", "scissors"];
+        let selection = ["Rock", "Paper", "Scissors"];
         let computerSelection = selection[Math.floor(Math.random()*selection.length)];
         return computerSelection;
     }
 
-
-  
-
+ 
  function playRound(playerSelection, computerSelection){
        
-       if (playerSelection === "rock"){
+       if (playerSelection === "Rock"){
            
-            if (computerSelection === "rock"){
+            if (computerSelection === "Rock"){
                 return "draw";
             }
-            else if (computerSelection === "paper"){
+            else if (computerSelection === "Paper"){
                 return "lose";
             }
             else {
@@ -35,11 +33,11 @@ function computerPlay(){
        }
        
        
-       if (playerSelection === "scissors"){
-           if (computerSelection === "rock"){
+       if (playerSelection === "Scissors"){
+           if (computerSelection === "Rock"){
                 return "lose";
             }
-            else if (computerSelection === "paper"){
+            else if (computerSelection === "Paper"){
                 return "win";
             }
             else{
@@ -47,29 +45,25 @@ function computerPlay(){
             }
         }
        
-        if (playerSelection === "paper"){
-            if (computerSelection === "rock"){
+        if (playerSelection === "Paper"){
+            if (computerSelection === "Rock"){
                 return "win";
             }
-            else if (computerSelection === "paper"){
+            else if (computerSelection === "Paper"){
                 return "draw";
             }
             else{
                 return "lose";
             }
         }
-	 
-   } 
+ } 
 
-
-
-            
-                
+               
 var playerWins = 0;
 var compWins = 0;
 var result = [];
      
-        
+      
          
 buttons.forEach((button) => {
 	button.addEventListener("click", function(){
@@ -105,12 +99,12 @@ buttons.forEach((button) => {
             
         if (playerWins == 5){        
         
-            roundResult.innerHTML = 'You\'re the winner!';
+            roundResult.innerHTML = 'The game is over. You\'re the winner! :\)';
 			resultDisplay.appendChild(roundResult);
 			playerWins = 0;
 			compWins = 0;
 		} else if (compWins == 5){
-            roundResult.innerHTML = 'You lost the match!';
+            roundResult.innerHTML = 'Game Over. You lost the match!';
 			resultDisplay.appendChild(roundResult);
 			playerWins = 0;
 			compWins = 0;
