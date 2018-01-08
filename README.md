@@ -5,3 +5,5 @@ Practice project for [The Odin Project](https://www.theodinproject.com/courses/w
 I learned here how to change html dynamically and practiced creating listening events.
 
 Also, I learned that if I want to use gradient background with bootstrap I need to set `body` margin to 0 and as `fixed`.
+
+Live version [here](https://elpetit69.github.io/gui-rock-paper-scissors/).

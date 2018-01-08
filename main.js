@@ -70,7 +70,7 @@ buttons.forEach((button) => {
 		var computerSelection = computerPlay();
 		var playerSelection = button.id;
 		
-		const text = playerSelection + " vs " + computerSelection;
+		const text = playerSelection.toUpperCase() + " vs " + computerSelection.toUpperCase();
 	    
 		displayChoice.textContent = text;
 	    display.appendChild(displayChoice);
