@@ -29,6 +29,7 @@ hr{
 }
 #score{
 	border: 2px solid darkgoldenrod;
+	background: #fff;
 	margin: 20px;
 	width: 50%;
 	position: absolute;
