@@ -6,4 +6,4 @@ I learned here how to change html dynamically and practiced creating listening e
 
 
 
-Live version [here](https://elpetit69.github.io/gui-rock-paper-scissors/).
+Live version [here](https://atarsa.github.io/gui-rock-paper-scissors/).
